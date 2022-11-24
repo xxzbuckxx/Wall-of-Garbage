@@ -8,6 +8,14 @@ const SendMessage = () => {
   // <++> TODO: Specify e type
   const sendMessage = async (e: any) => {
     e.preventDefault();
+
+    fetch(import.meta.env.VITE_VERCEL_API + "/" + formValue)
+      .then((res: Response) => {
+        return res.json();
+      })
+      .then((result) => {
+        window.location.reload();
+      });
     console.log(`sending message '${formValue}'`);
   };
 
