@@ -11,7 +11,9 @@ This is a simple test project to try out a few technologies.
 ### Commands
 
 `yarn dev` - Start development server
+
 `yarn deploy` - Deploy to Vercel
+
 `yarn database` - Access CockroachDB cluster
 
 ## Frontend
@@ -22,5 +24,7 @@ This is a simple test project to try out a few technologies.
 ### Commands
 
 `yarn dev` - Start development server
+
 `yarn build` - Build frontend
+
 `yarn preview` - Preview build
