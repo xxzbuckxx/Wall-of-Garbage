@@ -19,7 +19,7 @@ jobs:
         run: |
           cd frontend
           yarn
-          yarn run build --base=/Wall-Of-Garbage
+          yarn run build --base=/Wall-of-Garbage/
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
