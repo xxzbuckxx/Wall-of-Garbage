@@ -1,8 +1,7 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
-import allowCors from "../util/cors";
 import pgPool from "../util/pgPool";
 
-const handler = async (_req: VercelRequest, res: VercelResponse) => {
+export default async (_req: VercelRequest, res: VercelResponse) => {
   try {
     const client = await pgPool.connect();
 
@@ -17,5 +16,3 @@ const handler = async (_req: VercelRequest, res: VercelResponse) => {
     res.status(400).send(error);
   }
 };
-
-module.exports = allowCors(handler);

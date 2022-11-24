@@ -1,4 +1,4 @@
-import react, { useEffect, useState } from "react";
+import react, { useState } from "react";
 import MessageBoard from "./components/MessageBoard";
 import SendMessage from "./components/SendMessage";
 
