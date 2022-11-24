@@ -26,7 +26,7 @@ const SendMessage = () => {
           value={formValue}
           onChange={(e) => setFormValue(e.target.value)}
         />
-        <button type="submit">Post</button>
+        <button type="submit">📩</button>
       </form>
     </div>
   );
