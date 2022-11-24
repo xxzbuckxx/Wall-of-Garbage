@@ -1,0 +1,47 @@
+.sendmessage__container {
+  width: 100%;
+
+  &--form {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+
+    input {
+      flex-grow: 1;
+      padding: 0.4em 1em;
+      border: none;
+      border-radius: 0.5em;
+
+      background-color: white;
+      color: black;
+      font-size: 1em;
+    }
+
+    button {
+      margin: 0 1em;
+      background-color: lightgreen;
+      font-weight: bold;
+      border: none;
+      border-radius: 0.5em;
+      padding: 1em 2em;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+  .sendmessage__container {
+    &--form {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      button {
+        margin: 0;
+      }
+    }
+
+  }
+
+}
