@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import "./index.scss";
 
@@ -8,6 +8,12 @@ type Message = {
 };
 
 const MessageBoard = () => {
+  const messageBoardRef = useRef<HTMLDivElement>(null);
+
+  function handleScrollClick() {
+    messageBoardRef.current!.scrollIntoView({ behavior: "smooth" });
+  }
+
   const [messages, setMessages] = useState<Message[] | undefined>();
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -32,7 +38,7 @@ const MessageBoard = () => {
   }, []);
 
   return (
-    <div className="messageboard__container">
+    <div className="messageboard__container" ref={messageBoardRef}>
       {error ? (
         <p className="messageboard__container--error">
           <i>{error}</i>
@@ -43,11 +49,26 @@ const MessageBoard = () => {
         </p>
       ) : (
         messages &&
-        messages.map((message: Message) => (
-          <p className="messageboard__container--message" key={`${message.id}`}>
-            {message.message}
+        messages.map((message: Message) => {
+          console.log(message);
+          return (
+            <p
+              className="messageboard__container--message"
+              key={`${message.id}`}
+            >
+              {message.message}
+            </p>
+          );
+        }) &&
+        messages.length < 5 && (
+          <p
+            className="messageboard__container--scroll-up"
+            onClick={() => handleScrollClick()}
+          >
+            <i className="fa-solid fa-arrow-up"></i> Scroll Up{" "}
+            <i className="fa-solid fa-arrow-up"></i>
           </p>
-        ))
+        )
       )}
     </div>
   );
