@@ -3,11 +3,23 @@
   text-align: center;
   overflow-y: scroll;
 
+  background-color: #333232;
+  border-radius: 0.5em;
+
   &--error {
     color: red;
   }
 
   &--loading {
     color: darkgray;
+  }
+
+  &--message {
+    margin: 1em;
+
+    &:not(:last-child) {
+      border-bottom: 2px solid #242424;
+      padding-bottom: 1em;
+    }
   }
 }

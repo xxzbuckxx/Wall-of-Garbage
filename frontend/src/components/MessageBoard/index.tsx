@@ -44,7 +44,9 @@ const MessageBoard = () => {
       ) : (
         messages &&
         messages.map((message: Message) => (
-          <p key={`${message.id}`}>{message.message}</p>
+          <p className="messageboard__container--message" key={`${message.id}`}>
+            {message.message}
+          </p>
         ))
       )}
     </div>
