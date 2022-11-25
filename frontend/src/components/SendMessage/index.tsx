@@ -11,12 +11,17 @@ const SendMessage = () => {
 
     fetch(import.meta.env.VITE_VERCEL_API + "/" + formValue)
       .then((res: Response) => {
+        if (!res.ok) {
+          throw Error(res.statusText);
+        }
         return res.json();
       })
       .then((result) => {
         window.location.reload();
+      })
+      .catch((error) => {
+        console.error("error sending message");
       });
-    console.log(`sending message '${formValue}'`);
   };
 
   return (
