@@ -38,7 +38,8 @@ const MessageBoard = () => {
   }, []);
 
   return (
-    <div className="messageboard__container" ref={messageBoardRef}>
+    <div className="messageboard__container">
+      <div ref={messageBoardRef}></div>
       {error ? (
         <p className="messageboard__container--error">
           <i>{error}</i>
@@ -49,26 +50,23 @@ const MessageBoard = () => {
         </p>
       ) : (
         messages &&
-        messages.map((message: Message) => {
-          console.log(message);
-          return (
-            <p
-              className="messageboard__container--message"
-              key={`${message.id}`}
-            >
-              {message.message}
-            </p>
-          );
-        }) &&
-        messages.length < 5 && (
-          <p
-            className="messageboard__container--scroll-up"
-            onClick={() => handleScrollClick()}
-          >
-            <i className="fa-solid fa-arrow-up"></i> Scroll Up{" "}
-            <i className="fa-solid fa-arrow-up"></i>
+        messages.map((message: Message) => (
+          <p className="messageboard__container--message" key={`${message.id}`}>
+            {message.message}
           </p>
-        )
+        ))
+      )}
+      {messages && messages.length > 5 && (
+        <p
+          className="messageboard__container--scroll-up"
+          onClick={() => handleScrollClick()}
+        >
+          <i className="fa-solid fa-arrow-up"></i>
+          <span className="messageboard__container--scroll-up--text">
+            Scroll Up
+          </span>
+          <i className="fa-solid fa-arrow-up"></i>
+        </p>
       )}
     </div>
   );

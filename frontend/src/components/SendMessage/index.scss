@@ -32,18 +32,13 @@
 }
 
 @media screen and (max-width: 400px) {
+  .sendmessage__container--form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 
-  .sendmessage__container {
-    &--form {
-      display: flex;
-      flex-direction: column;
-      gap: 1em;
-
-      button {
-        margin: 0;
-      }
+    button {
+      margin: 0;
     }
-
   }
-
 }

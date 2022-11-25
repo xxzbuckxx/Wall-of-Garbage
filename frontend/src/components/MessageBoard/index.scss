@@ -11,7 +11,7 @@
   }
 
   &--loading {
-    color: darkgray;
+    color: #8a8a8a;
   }
 
   &--message {
@@ -23,5 +23,17 @@
     }
   }
 
-  // &--scroll-up {}
+  &--scroll-up {
+    color: #8a8a8a;
+
+    &--text {
+      padding: 0 1.5em;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .messageboard__container--scroll-up--text {
+    padding: 0 0.4em;
+  }
 }
