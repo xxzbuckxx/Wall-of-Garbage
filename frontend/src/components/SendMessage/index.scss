@@ -6,6 +6,7 @@
     flex-direction: row;
     align-items: stretch;
     justify-content: center;
+    gap: 1em;
 
     input {
       flex-grow: 1;
@@ -19,7 +20,6 @@
     }
 
     button {
-      margin: 0 1em;
       padding: 0.5em 1.5em;
       background-color: #7e0d79;
       border: none;
