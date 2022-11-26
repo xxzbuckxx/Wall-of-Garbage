@@ -26,6 +26,10 @@
   &--scroll-up {
     color: #8a8a8a;
 
+    &:hover {
+      cursor: pointer;
+    }
+
     &--text {
       padding: 0 1.5em;
     }

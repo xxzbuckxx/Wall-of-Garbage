@@ -5,7 +5,7 @@ export default async (_req: VercelRequest, res: VercelResponse) => {
   try {
     const client = await pgPool.connect();
 
-    const sql = "SELECT * FROM messages";
+    const sql = "SELECT * FROM messages ORDER BY created_at DESC";
     const { rows } = await client.query(sql);
     const todos = rows;
 
