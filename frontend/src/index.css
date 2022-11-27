@@ -14,9 +14,17 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --toastify-toast-width: min(70vw, 500px);
 }
 
 body {
   margin: 0px;
   padding: 0px;
+}
+
+/* Notification Modal */
+.Toastify__toast--error {
+  font-size: 0.8em;
+  border-radius: 0.5em;
 }

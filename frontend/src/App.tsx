@@ -1,7 +1,9 @@
 import react, { useState } from "react";
+import { ToastContainer } from "react-toastify";
 import MessageBoard from "./components/MessageBoard";
 import SendMessage from "./components/SendMessage";
 
+import "react-toastify/dist/ReactToastify.css";
 import "./App.scss";
 
 const App = () => {
@@ -16,6 +18,18 @@ const App = () => {
         <SendMessage />
         <div className="app__container--bottom--space"></div>
       </div>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+      />
     </div>
   );
 };

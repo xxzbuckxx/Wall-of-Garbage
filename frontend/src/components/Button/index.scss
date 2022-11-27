@@ -1,0 +1,76 @@
+.button__container {
+  --button-background-alpha: 1.0;
+
+  padding: 0.5em 1.5em;
+  border: none;
+  border-radius: 0.5em;
+
+  width: 4em;
+  height: 2.5em;
+
+  font-weight: bold;
+  font-size: 1em;
+
+  transition: all 300ms ease;
+
+  &.loading,
+  &.disabled {
+    --button-background-alpha: 0.5;
+  }
+
+  &.purple {
+    background-color: rgba(126, 13, 121, var(--button-background-alpha));
+  }
+
+  &--loading-ring {
+    display: inline-block;
+    position: relative;
+    font-size: 1.4em;
+    width: 0.8em;
+    height: 0.8em;
+
+    & div {
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      width: 0.64em;
+      height: 0.64em;
+      margin: 0.08em;
+      border: 0.08em solid #fff;
+      border-radius: 50%;
+      animation: loading-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+      border-color: #fff transparent transparent transparent;
+
+      &:nth-child(1) {
+        animation-delay: -0.45s;
+      }
+
+      &:nth-child(2) {
+        animation-delay: -0.3s;
+      }
+
+      &:nth-child(3) {
+        animation-delay: -0.15s;
+      }
+
+
+    }
+  }
+}
+
+@keyframes loading-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .button__container {
+    width: 100%;
+
+  }
+}
